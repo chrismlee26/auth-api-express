@@ -17,7 +17,7 @@ module.exports = function (app) {
   app.get("/movies/:id", function(req, res) {
     var currentUser = req.user;
     Movies.findById(req.params.id).lean().then((movies) => {
-      res.render('queries-show', { movies, currentUser })
+      res.render('movies-show', { movies, currentUser })
     }).catch((err) => {
       console.log(err.message)
     })
