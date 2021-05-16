@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
 
 // Controllers
 require('./controllers/movies.js')(app)
+require('./controllers/auth.js')(app)
 
 // Set db
 require('./data/movies-db');
