@@ -1,8 +1,8 @@
 const mocha = require("mocha");
 const chai = require("chai");
-const epect = chai.expect
-const chaiHttp = require("chai-http");
+const expect = chai.expect
 const should = chai.should();
+const chaiHttp = require("chai-http");
 
 const server = require('./index.js')
 

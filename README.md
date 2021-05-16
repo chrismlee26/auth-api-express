@@ -1,4 +1,4 @@
-# 🔐 auth-api-project
+# 🔐 ArnoldMovieSearcher
 
 Insert badges here.
 
