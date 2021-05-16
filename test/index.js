@@ -8,8 +8,6 @@ const server = require('./index.js')
 
 chai.use(chaiHttp);
 
-// TODO: Utilize the beforeEach and afterEach functions
-
 describe("basic test routes", () => {
   it('returns a 200', (done) => { 
   });
