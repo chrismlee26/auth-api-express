@@ -52,15 +52,16 @@ module.exports = function (app) {
   })
 
   // Delete
-  app.delete('/deleteMovies/:id', (req,res) => {
+  app.delete('/deleteMovies:id', (req,res) => {
     const movieToDelete = req.params.id
 
-        Movie.find({_id: req.body.ObjectId}, (err, movie) => {
+        Movies.find({_id: req.body.ObjectId}, (err, movie) => {
           if(err) console.log(err)
           else movieToDelete = movies
         })
+        console.log('delete route check')
         if(movieToDelete) {
-          movieToDelete.delete({movieToDelete}, (err, deletedMovies) => {
+          movieToDelete.deleteOne({movieToDelete}, (err, deletedMovies) => {
             if(err) console.log(err)
             else res.json(deletedMovies)
             console.log(movieToDelete)
@@ -72,4 +73,13 @@ module.exports = function (app) {
 
 
 
-
+  // // Get - Show One
+  // app.get("/movies/:id", function(req, res) {
+  //   var currentUser = req.user;
+  //   Movies.findById(req.params.id)
+  //     .then((movies) => {
+  //     res.render('movies-show', { movies, currentUser })
+  //   }).catch((err) => {
+  //     console.log(err.message)
+  //   })
+  // });

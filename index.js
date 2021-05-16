@@ -45,7 +45,6 @@ app.use(checkAuth);
 
 // Routes
 app.get('/', (req, res) => {
-    // res.send(res.json(movies))
     res.render('movies-new')
 });
 
