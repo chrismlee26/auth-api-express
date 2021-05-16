@@ -6,7 +6,6 @@ const expressValidator = require('express-validator');
 const exphbs = require('express-handlebars');
 var cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
-const assert = require('assert')
 
 // App 
 const app = express()
@@ -28,12 +27,27 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+// Authentication
+var checkAuth = (req, res, next) => {
+  console.log("Checking authentication");
+  if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+    req.user = null;
+  } else {
+    var token = req.cookies.nToken;
+    var decodedToken = jwt.decode(token, { complete: true }) || {};
+    req.user = decodedToken.payload;
+  }
+
+  next();
+};
+app.use(checkAuth);
+
+
 // Routes
 app.get('/', (req, res) => {
     // res.send(res.json(movies))
-    res.send('why does postman hate me?')
+    res.render('movies-new')
 });
-
 
 // Controllers
 require('./controllers/movies.js')(app)
