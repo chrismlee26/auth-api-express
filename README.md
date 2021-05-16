@@ -1,4 +1,4 @@
-# 🔐 auth-api-starterpack
+# 🔐 auth-api-project
 
 Insert badges here.
 
@@ -15,3 +15,21 @@ Insert badges here.
 - [ ] Contains documentation explaining how to use my API
 - [ ] CRUD operations
 - [ ] One of each endpoint: **Get**, **Post**, **Put** & **Delete**
+
+## API Calls
+
+###### GET
+
+If the user uses "/movies" it will pull all movies in the DB and display.
+
+###### POST
+
+If the user uses "/uploadMovie" it will add a movie in the database.
+
+###### PUT
+
+If the user uses "/updateMovie" it will update a movie in the DB.
+
+###### DELETE
+
+If the user uses "/removeMovie" it will delete a movie in the DB.
