@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 assert = require('assert')
 
 // Set default mongodb connection
-const url = 'mongodb+srv://chris-test:Upbu9PD3oDWO5Jgx@cluster0.1zuec.mongodb.net/arnold-database?retryWrites=true&w=majority';
+const url = 'mongodb+srv://chris-test:Upbu9PD3oDWO5Jgx@cluster0.1zuec.mongodb.net/arnolddatabase?retryWrites=true&w=majority';
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
