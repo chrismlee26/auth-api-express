@@ -54,8 +54,9 @@ module.exports = function (app) {
   // Delete
   app.delete('/deleteMovies:id', (req,res) => {
     const movieToDelete = req.params.id
+    // So we need to find a song first, then delete it. 
 
-        Movies.find({_id: req.body.ObjectId}, (err, movie) => {
+        Movies.find({_id: req.body.ObjectId}, (err, movies) => {
           if(err) console.log(err)
           else movieToDelete = movies
         })
@@ -70,16 +71,3 @@ module.exports = function (app) {
         return res.redirect('/')
     })
 }
-
-
-
-  // // Get - Show One
-  // app.get("/movies/:id", function(req, res) {
-  //   var currentUser = req.user;
-  //   Movies.findById(req.params.id)
-  //     .then((movies) => {
-  //     res.render('movies-show', { movies, currentUser })
-  //   }).catch((err) => {
-  //     console.log(err.message)
-  //   })
-  // });

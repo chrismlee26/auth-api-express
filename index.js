@@ -56,8 +56,11 @@ require('./controllers/auth.js')(app)
 require('./data/movies-db');
 
 // Start Server
-app.listen(3000, () => {
-  console.log('Welcome to port localhost:3000!');
-});
+// app.listen(3000, () => {
+//   console.log('Welcome to port localhost:3000!');
+// });
+
+app.listen(process.env.PORT || 3000, 
+  () => console.log('server running...'))
 
 module.exports = app;

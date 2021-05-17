@@ -2,15 +2,16 @@
   <div class="col-sm-6 col-sm-offset-3">
     <a href="{{movies.url}}" class="lead"><b>{{movies.title}}</b> <small>({{movies.year}})</small></a>
 
-    <form action="/movies/{{post._id}}/comments" method="movies">
-      <textarea class='form-control' name="content" placeholder="comment"></textarea>
-      <div class="text-right">
-        <button type="submit" class="btn btn-primary">Save</button>
+    {{!-- So the route is correct, need to find controllers issue --}}
+    <form action="/deleteMovies/{{movies._id}}" method="Movies">
+      <div class="text-left">
+        <button type="link">Delete</button>
       </div>
     </form>
-    {{#each post.comments}}
-    <p>{{this.content}}</p>
-    <p>{{post.author.username}}</p>
-    {{/each}}
+    <form action="/updateMovies/{{movies._id}}" method="Movies">
+      <div class="text-left">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </form>
   </div>
 </div>
